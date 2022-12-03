@@ -102,7 +102,7 @@ class Agent:
                 self.agent_type = agent_type
 
         # for test without model pool
-        if Config.SINGLE_TEST:
+        if not Config.SINGLE_TEST:
             self.is_latest_model = True
             self._predictor._sess.run(self.model.init)
         else:

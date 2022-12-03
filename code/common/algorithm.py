@@ -108,20 +108,6 @@ class Algorithm:
 
     def build_graph(self, datas, update):
 
-        input_names = [inp.name for inp in datas]
-        input_datas = [inp.data for inp in datas]
-        feed_dict = dict(zip(input_names, input_datas))
-        output_list = cvt_tensor_to_infer_output(self.model.get_output_tensors())
-        output_names = [output.name for output in output_list]
-        output_datas = self._sess.run(output_names, feed_dict=feed_dict)
-        import rl_framework.common.logging as LOG
-        LOG.info("+++++++++++++++++")
-        LOG.info(output_names)
-        LOG.info("-----------------")
-        LOG.info(output_datas)
-        LOG.info("+++++++++++++++++")
-
-
         # add split datas
         data_list = tf.split(datas, self.cut_points, axis=1)
         #  the meaning of each data in data_list should be as the same as that in GpuProxy.py
