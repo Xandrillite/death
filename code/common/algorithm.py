@@ -463,6 +463,9 @@ class Algorithm:
         tar_embed_list.append(
             tf.constant(0.1, shape=[self.batch_size, self.target_embed_dim])
         )
+        print("++++++++++++++++++++")
+        print(tar_embed_list)
+        print("++++++++++++++++++++")
 
         with tf.variable_scope("hero_main"):
 
