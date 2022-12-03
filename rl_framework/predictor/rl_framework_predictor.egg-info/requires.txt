@@ -1,0 +1,8 @@
+gevent==20.9.0
+requests
+
+[cpu]
+tensorflow==1.14.0
+
+[gpu]
+tensorflow-gpu>=1.14.0
